@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="6" fill="#0d1520"/>
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" 
+  <text x="46%" y="52%" dominant-baseline="middle" text-anchor="middle" 
     font-family="Georgia, serif" font-size="13" font-weight="400" 
     letter-spacing="1" fill="#f0ebe1">PS</text>
+  <polyline points="19,19 21,22 26,16" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>
