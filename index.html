@@ -36,9 +36,8 @@
     text-transform: uppercase;
     color: #f0ebe1;
     cursor: default;
-    transition: color 0.2s;
   }
-  .logo:hover {
+  .logo.surging {
     color: #a8d8ff;
     animation: surge-blue 0.15s infinite;
   }
@@ -63,21 +62,21 @@
     text-align: center;
     color: #f0ebe1;
     cursor: default;
-    transition: color 0.2s;
+    text-shadow: none;
   }
   .tagline span { color: rgba(240,235,225,0.28); font-style: italic; }
-  .tagline:hover {
-    color: #ffaaaa;
-    animation: surge-red 0.12s infinite;
+  .tagline.surging {
+    color: #aaffbb;
+    animation: surge-green 0.12s infinite;
   }
-  .tagline:hover span { color: rgba(255,100,100,0.4); }
-  @keyframes surge-red {
-    0%   { text-shadow: 0 0 6px #ff4444, 0 0 20px #cc0000, 0 0 40px #800000, 0 0 80px #400000; }
-    20%  { text-shadow: 0 0 2px #ff8888, 0 0 30px #ff2222, 0 0 60px #cc0000, 0 0 100px #800000; }
-    40%  { text-shadow: 0 0 10px #ff0000, 0 0 40px #cc0000, 0 0 80px #800000, 0 0 120px #400000; }
-    60%  { text-shadow: 0 0 4px #ff6666, 0 0 15px #ff0000, 0 0 35px #cc0000, 0 0 70px #800000; }
-    80%  { text-shadow: 0 0 8px #ff3333, 0 0 25px #dd0000, 0 0 55px #aa0000, 0 0 90px #600000; }
-    100% { text-shadow: 0 0 6px #ff4444, 0 0 20px #cc0000, 0 0 40px #800000, 0 0 80px #400000; }
+  .tagline.surging span { color: rgba(100,255,130,0.4); }
+  @keyframes surge-green {
+    0%   { text-shadow: 0 0 6px #00ff44, 0 0 20px #00cc33, 0 0 40px #008022, 0 0 80px #004011; }
+    20%  { text-shadow: 0 0 2px #88ffaa, 0 0 30px #00ff44, 0 0 60px #00cc33, 0 0 100px #008022; }
+    40%  { text-shadow: 0 0 10px #00ff44, 0 0 40px #00cc33, 0 0 80px #008022, 0 0 120px #004011; }
+    60%  { text-shadow: 0 0 4px #66ff88, 0 0 15px #00ff44, 0 0 35px #00cc33, 0 0 70px #008022; }
+    80%  { text-shadow: 0 0 8px #33ff66, 0 0 25px #00dd33, 0 0 55px #00aa22, 0 0 90px #006011; }
+    100% { text-shadow: 0 0 6px #00ff44, 0 0 20px #00cc33, 0 0 40px #008022, 0 0 80px #004011; }
   }
   .cta-wrap {
     opacity: 0;
@@ -103,8 +102,17 @@
 </style>
 </head>
 <body>
-  <div class="logo-wrap"><div class="logo">Phillips Strategy</div></div>
-  <div class="tagline-wrap"><h1 class="tagline">People<span>,</span> power<span>,</span> change<span>.</span></h1></div>
+  <div class="logo-wrap"><div class="logo" id="logo">Phillips Strategy</div></div>
+  <div class="tagline-wrap"><h1 class="tagline" id="tagline">People<span>,</span> power<span>,</span> change<span>.</span></h1></div>
   <div class="cta-wrap"><a class="cta" href="mailto:hello@phillipsstrategy.co.uk">Contact us</a></div>
+
+<script>
+  const logo = document.getElementById('logo');
+  const tagline = document.getElementById('tagline');
+  logo.addEventListener('mouseenter', () => logo.classList.add('surging'));
+  logo.addEventListener('mouseleave', () => { logo.classList.remove('surging'); logo.style.color = '#f0ebe1'; logo.style.textShadow = 'none'; });
+  tagline.addEventListener('mouseenter', () => tagline.classList.add('surging'));
+  tagline.addEventListener('mouseleave', () => { tagline.classList.remove('surging'); tagline.style.color = '#f0ebe1'; tagline.style.textShadow = 'none'; });
+</script>
 </body>
 </html>
