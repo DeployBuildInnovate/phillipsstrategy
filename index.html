@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phillips Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: #0d1520;
+    color: #f0ebe1;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #f0ebe1;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: up 0.9s 0.1s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+  .tagline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(3rem, 7.5vw, 5.5rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    animation: up 0.9s 0.3s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+  .tagline span { color: rgba(240,235,225,0.28); font-style: italic; }
+  .cta {
+    display: inline-block;
+    padding: 0.85rem 2.25rem;
+    border: 1px solid rgba(240,235,225,0.3);
+    color: rgba(240,235,225,0.65);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color 0.3s, color 0.3s, background 0.3s;
+    opacity: 0;
+    animation: up 0.9s 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+  .cta:hover { border-color: #f0ebe1; color: #0d1520; background: #f0ebe1; }
+  @keyframes up {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+  <div class="logo">Phillips Strategy</div>
+  <h1 class="tagline">People<span>,</span> power<span>,</span> change<span>.</span></h1>
+  <a class="cta" href="mailto:hello@phillipsstrategy.co.uk">Contact us</a>
+</body>
+</html>
