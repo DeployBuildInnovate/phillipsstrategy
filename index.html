@@ -110,10 +110,17 @@
 <script>
   const logo = document.getElementById('logo');
   const tagline = document.getElementById('tagline');
-  logo.addEventListener('mouseenter', () => logo.classList.add('surging'));
-  logo.addEventListener('mouseleave', () => logo.classList.remove('surging'));
-  tagline.addEventListener('mouseenter', () => tagline.classList.add('surging'));
-  tagline.addEventListener('mouseleave', () => tagline.classList.remove('surging'));
+
+  function addSurge(el) { el.classList.add('surging'); }
+  function removeSurge(el) { el.classList.remove('surging'); }
+
+  logo.addEventListener('mouseenter', () => addSurge(logo));
+  logo.addEventListener('mouseleave', () => removeSurge(logo));
+  logo.addEventListener('touchstart', () => { addSurge(logo); setTimeout(() => removeSurge(logo), 1000); }, {passive:true});
+
+  tagline.addEventListener('mouseenter', () => addSurge(tagline));
+  tagline.addEventListener('mouseleave', () => removeSurge(tagline));
+  tagline.addEventListener('touchstart', () => { addSurge(tagline); setTimeout(() => removeSurge(tagline), 1000); }, {passive:true});
 </script>
 </body>
 </html>
